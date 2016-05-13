@@ -15,7 +15,7 @@ serve: .deps
 	@$(WITH_VENV) urubu serve & echo "$$!" > server.pid
 	@$(WITH_VENV) watchmedo shell-command \
 	--ignore-directories --patterns="*.md" --recursive \
-	--command="source .venv/bin/activate; urubu build" . & \
+	--command="$(WITH_VENV) urubu build" . & \
 	echo "$$!" > builder.pid
 	@trap "kill \`cat server.pid\` \`cat builder.pid\` && \
 	rm server.pid builder.pid" EXIT && while true; do sleep 10; done
