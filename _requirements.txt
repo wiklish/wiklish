@@ -1,0 +1,2 @@
+urubu>=1.2.0
+watchdog>=0.8.3
