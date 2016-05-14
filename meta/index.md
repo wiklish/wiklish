@@ -26,6 +26,10 @@ and the canonical version lives
 [on GitHub](https://github.com/wiklish/wiklish) (although it can be easily
 viewed or published in a variety of ways).
 
+Site organization is however you want it to be! It's recommended that
+(at least for personal projects) you use a personal directory (e.g. [bwr](bwr))
+when appropriate.
+
 # Contributing
 
 Anyone can fork this project and run a similar thing for themselves (such
