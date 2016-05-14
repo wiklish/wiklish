@@ -1,3 +1,4 @@
 .deps
 .venv
 _build
+*.pid
