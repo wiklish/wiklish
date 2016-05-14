@@ -39,6 +39,6 @@ _targets/%: build
 	git add .gitmodules $@
 	git commit -m "AUTO: UPDATE TARGET SUBMODULE $@"
 
-publish: build _targets/$(PRIMARY_TARGET)
+publish: _targets/$(PRIMARY_TARGET)
 
 all: build
