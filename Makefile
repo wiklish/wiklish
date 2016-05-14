@@ -1,5 +1,5 @@
 VENV_DIR=.venv
-WITH_VENV=source $(VENV_DIR)/bin/activate;
+WITH_VENV=. $(VENV_DIR)/bin/activate;
 REQUIREMENTS_FILE=_requirements.txt
 BUILD_DIR=_build
 PRIMARY_TARGET=wiklish.github.io
