@@ -1,0 +1,4 @@
+[submodule "_targets/wiklish.github.io"]
+	path = _targets/wiklish.github.io
+	url = git@github.com:wiklish/wiklish.github.io
+	branch = master
