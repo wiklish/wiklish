@@ -36,7 +36,8 @@ _targets/%: build
 	cp -R $(BUILD_DIR) $@
 	cd $@; git add .; git commit -m "AUTO: BUILT TARGET $@"; git push origin
 	git submodule update --remote
-	git commit -am "AUTO: BUILT TARGET $@"
+	git add .gitmodules $@
+	git commit -m "AUTO: UPDATE TARGET SUBMODULE $@"
 
 publish: build _targets/$(PRIMARY_TARGET)
 
