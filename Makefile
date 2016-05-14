@@ -1,6 +1,8 @@
 VENV_DIR=.venv
 WITH_VENV=source $(VENV_DIR)/bin/activate;
 REQUIREMENTS_FILE=_requirements.txt
+BUILD_DIR=_build
+PRIMARY_TARGET=wiklish.github.io
 
 .PHONY: clean serve build publish
 
@@ -25,10 +27,18 @@ build: .deps
 
 clean:
 	rm .deps
-	rm -rf _build
+	rm -rf $(BUILD_DIR)
 	rm -rf $(VENV_DIR)
 
-publish: build
-	git subtree push --prefix _build origin gh-pages
+_targets/%: build
+	mv $@/.git $(BUILD_DIR)
+	rm -rf $@
+	cp -R $(BUILD_DIR) $@
+	cd $@; git add .; git commit -m "AUTO: BUILT TARGET $@"; git push origin
+	git submodule update --remote
+	git commit -am "AUTO: BUILT TARGET $@"
+
+.PHONY: publish
+publish: build _targets/$(PRIMARY_TARGET)
 
 all: build
