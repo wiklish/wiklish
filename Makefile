@@ -34,6 +34,7 @@ _targets/%: build
 	mv $@/.git $(BUILD_DIR)
 	rm -rf $@
 	cp -R $(BUILD_DIR) $@
+	rm $@/builder.pid $@/server.pid || true
 	cd $@; git add .; git commit -m "AUTO: BUILT TARGET $@"; git push origin
 	git submodule update --remote
 	git add .gitmodules $@
