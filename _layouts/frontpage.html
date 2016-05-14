@@ -1,10 +1,12 @@
-<html>
-  <head>
-    <title>Wiklish Hack: {{this.title}}</title>
-  </head>
-  <body>
-    <h1>{{this.title}}</h1>
-    <p>
-      {{this.body}}
-    </p>
-</html>
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<title>Wiklish Hack: {{this.title}}</title>
+{% endblock %}
+{% block body %}
+{{ super() }}
+<h1>{{this.title}}</h1>
+<p>
+  {{this.body}}
+</p>
+{% endblock %}
