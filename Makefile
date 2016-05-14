@@ -38,7 +38,6 @@ _targets/%: build
 	git submodule update --remote
 	git commit -am "AUTO: BUILT TARGET $@"
 
-.PHONY: publish
 publish: build _targets/$(PRIMARY_TARGET)
 
 all: build
