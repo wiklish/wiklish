@@ -1,7 +1,7 @@
 ---
 title: The Wiklish Hack
 layout: frontpage
-order: name
+order: title
 ---
 something
 
