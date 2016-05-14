@@ -1,6 +1,6 @@
 ---
 title: The Wiklish Hack
-layout: frontpage
+layout: wikipage
 order: title
 elsewhere: {github: "https://github.com/wiklish/wiklish"}
 tags: [wiki, meta, code]

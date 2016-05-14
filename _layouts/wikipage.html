@@ -1,4 +1,5 @@
 {% extends "page.html" %}
+{% block title %}{{ super() }}: {{this.title}}{% endblock %}
 {% block body %}
 {{ super() }}
 <h1>{{this.title}}</h1>
