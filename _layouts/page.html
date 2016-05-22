@@ -1,1 +1,9 @@
 {% extends "base.html" %}
+{% block content %}
+{{ super() }}
+<div class="page-header" id="banner">
+  <div class="row">
+    <h1>{{this.title}}</h1>
+  </div>
+</div>
+{% endblock %}

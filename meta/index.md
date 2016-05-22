@@ -1,5 +1,5 @@
 ---
-title: The Wiklish Hack
+title: The Wiklish Hack (Meta)
 layout: wikipage
 order: title
 elsewhere: {github: "https://github.com/wiklish/wiklish"}
