@@ -18,8 +18,14 @@
             <a class="navbar-brand" href="/">
               The Wiklish Hack
             </a>
+            <ul class="nav navbar-nav">
             {% block nav %}
+            
+            {% for item in this.components[:-1] %}
+            <li><a href={{"../" * (this.components|length - 1 - loop.index)}}> / {{item}}</a></li>
+            {% endfor %}
             {% endblock %}
+            </ul>
           </div>
         </div>
       </div>
