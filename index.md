@@ -11,3 +11,5 @@ content.
 
 To see more information about the project, check out the [meta page](meta).
 
+# Site Contents
+{% include "contents.html" %}
