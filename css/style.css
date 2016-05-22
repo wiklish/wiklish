@@ -1,0 +1,22 @@
+body {
+    font-family: 'Source Serif Pro', Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Serif Pro', Georgia, serif;
+}
+.navbar-brand {
+    font-family: 'Source Serif Pro', Georgia, serif;
+}
+
+.page-header {
+    margin-top: 1em;
+}
+
+footer {
+    margin-top: 3em;
+}
+
+img.logo {
+    height: 1.2em;
+}
