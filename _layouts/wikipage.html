@@ -2,7 +2,5 @@
 {% block title %}{{ super() }}: {{this.title}}{% endblock %}
 {% block content %}
 {{ super() }}
-<p>
-  {{this.body}}
-</p>
+{{this.body}}
 {% endblock %}

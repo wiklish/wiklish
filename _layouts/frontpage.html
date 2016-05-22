@@ -1,4 +1,16 @@
 {% extends "page.html" %}
 {% block content %}
 {{this.body}}
+<h2>Site Contents</h2>
+<ul>
+{%- for page in this["content"] recursive %}
+<li><a href="{{page.url}}"> {{page.title}}</a>
+  {% if page["content"] %}
+  <ul>
+    {{ loop(page["content"]) }}
+  </ul>
+  {% endif %}
+</li>
+{%- endfor %}
+</ul>
 {% endblock %}
