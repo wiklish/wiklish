@@ -14,3 +14,7 @@ Other places you can find me:
 * [LinkedIn](https://linkedin.com/in/benwr)
 * [Facebook](https://facebook.com/benwr)
 * [Twitter](https://twitter.com/benwr)
+
+To the extent that I have projects here, they're listed below:
+
+{% include "contents.html" %}

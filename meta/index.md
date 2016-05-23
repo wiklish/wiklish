@@ -31,7 +31,7 @@ and the canonical version lives
 viewed or published in a variety of ways).
 
 Site organization is however you want it to be! It's recommended that
-(at least for personal projects) you use a personal directory (e.g. [bwr](bwr))
+(at least for personal projects) you use a personal directory (e.g. [bwr](/bwr))
 when appropriate.
 
 # Contributing
