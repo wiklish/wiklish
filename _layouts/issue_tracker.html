@@ -1,0 +1,24 @@
+{% extends "page.html" %}
+{% block content %}
+{{ super() }}
+<table class="table">
+  <thead><tr>
+      <th>Ticket</th>
+      <th>Assignee</th>
+      <th>Priority</th>
+      <th>Status</th>
+  </tr></thead>
+  <tbody>
+    {% for issue in this.content %}
+    {% if issue.status != "done" %}
+    <tr>
+      <td><a href="{{issue.url}}">{{issue.title}}</a></td>
+      <td>{{issue.assignee or "None"}}</td>
+      <td>{{issue.priority or "None"}}</td>
+      <td>{{issue.status or "None"}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -21,8 +21,10 @@
           </div>
           <ul class="nav navbar-nav">
             {% block nav %}
-            {% for item in this.components[:-1] %}
-            <li><a href={{"../" * (this.components|length - 1 - loop.index)}}> / {{item}}</a></li>
+            {% for item in this.breadcrumbs[:-1] %}
+            <li>
+            <a href={{item.url}}> / {{item.components[-1]}}</a>
+            </li>
             {% endfor %}
             {% endblock %}
           </ul>

@@ -1,8 +1,7 @@
 ---
 title: TODO
-layout: wikipage
+layout: issue_tracker
 order: title
-tags: [wiki, meta, code, bugs]
 ---
 
 Ticket | Assignee (?)

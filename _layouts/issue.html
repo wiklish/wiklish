@@ -1,0 +1,9 @@
+{% extends "page.html" %}
+{% block content %}
+{{ super() }}
+<em>Assignee:</em> {{this.assignee or "None"}}<br />
+<em>Priority:</em> {{this.priority or "None"}}<br />
+<em>Status:</em> {{this.status or "None"}}<br /><br />
+
+{{ this.body }}
+{% endblock %}
