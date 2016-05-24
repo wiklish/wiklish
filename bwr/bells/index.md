@@ -107,3 +107,7 @@ Right now it consists of two major components: The place notation
 library (dumb javascript algorithms for expanding place notation),
 and the UI. The UI at least will need to be totally scrapped
 if I'm going to build the final version of the app.
+
+Ideally it will let you specify methods by name, and have lots
+of settings for interaction including automatic and interactive
+types.
