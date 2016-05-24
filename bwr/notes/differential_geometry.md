@@ -1,6 +1,7 @@
 ---
 title: Differential Geometry
 layout: wikipage
+math: true
 ---
 
 I've been somewhat interested in differential geometry since my cousin's
@@ -13,6 +14,10 @@ Geometry*, by Sussman and Wisdom. I've **loved** Abelson and Sussman's
 find that the humor and accessibility of that book have carried through
 into Sussman's other work. Initial indications are positive.
 
+# 0. Notation
+
+Explained in the prolog is some notation: 
+
 # 1. Introduction
 
-A couple funny things
+$$ D(\partial_2 L \circ \Gamma\[q\]) - \partial_1 L \circ \Gamma\[q\] = 0 $$
