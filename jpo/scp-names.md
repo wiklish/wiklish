@@ -27,10 +27,10 @@ Linux x1 4.4.0-22-generic #40-Ubuntu SMP Thu May 12 22:03:46 UTC 2016 x86_64 x86
 OpenSSH_7.2p2 Ubuntu-4ubuntu1, OpenSSL 1.0.2g-fips  1 Mar 2016
 % touch a$'\n'b
 % touch 'c\^Jd'
-% stat -c{{{%n}}} *
-{{{a
-b}}}
-{{{c\^Jd}}}
+% stat -c'<<<%n>>>' *
+<<<a
+b>>>
+<<<c\^Jd>>>
 % ls
 a?b  c\^Jd
 % ls -al
@@ -72,11 +72,11 @@ drwxrwxrwt  8 root  wheel  512 Jun  3 02:21 ..
 -rw-r--r--  1 jpo   wheel    0 Jun  3 02:20 a\^Jb
 -rw-r--r--  1 jpo   wheel    0 Jun  3 02:20 c\^Jd
 -rw-r--r--  1 jpo   wheel    0 Jun  3 02:23 e?f
-dev% stat -f{{{%N}}} *
-{{{a\^Jb}}}
-{{{c\^Jd}}}
-{{{e
-f}}}
+dev% stat -f'<<<%N>>>' *
+<<<a\^Jb>>>
+<<<c\^Jd>>>
+<<<e
+f>>>
 ```
 
 Prior to [this commit in 2007](http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/scp.c.diff?r1=1.157&r2=1.158&f=h) scp would just skip files with newlines in them.
