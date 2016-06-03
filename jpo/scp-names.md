@@ -5,6 +5,8 @@ layout: wikipage
 Due to its overly simplistic design, [scp(1)](http://man.openbsd.org/OpenBSD-current/man1/scp.1) will mangle filenames with newlines ('\n', 0x0a) in them.
 This is because the "scp protocol" (which does not appear to be properly documented anywhere afaict -- closest thing is probably this [blog post](https://blogs.oracle.com/janp/entry/how_the_scp_protocol_work)) uses newlines to denote the end of a filename, and expects the actual data of the file to follow immediately after.
 
+Prior to [this commit in 2007](http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/scp.c.diff?r1=1.157&r2=1.158&f=h) scp would just skip files with newlines in them.
+
 The relevant code can be found in [src/usr.bin/ssh/scp.c](http://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/src/usr.bin/ssh/scp.c):
 
 ```
@@ -78,5 +80,3 @@ dev% stat -f'<<<%N>>>' *
 <<<e
 f>>>
 ```
-
-Prior to [this commit in 2007](http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/scp.c.diff?r1=1.157&r2=1.158&f=h) scp would just skip files with newlines in them.
