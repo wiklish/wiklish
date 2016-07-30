@@ -9,14 +9,13 @@ math: true
 > I've ignored actual election procedures here (primarily the electoral college), because they make it more complicated, and I suspect that the results are more likely to be wrong for unrelated reasons. If you think I'm wrong about this, let me know how to correct the model.
 
 ## The probability of changing the outcome of the presidential election
-The chance of my vote changing the outcome of the election is P(c). P(c) is the same as the probability that,
-without my vote, the election would have been tied.
+Let's call the chance of my vote changing the outcome of the election P(c). P(c) is the same as the probability that, without my vote, the election would have been tied.
 
 ### How likely is it that an election will be tied?
 
-Predictwise currently gives a an estimate of the chance of my preferred candidate winning, but we can call that $P(p)$ without assigning a number to it, and it's likely to move further from $50\%$ as the election gets closer. I'll assume that I don't have any insider knowledge about $P(p)$, so I'll adopt $P(p)$ as my subjective credence of p.
+We can call my subjective credence that my candidate will win $P(w)$. PredictWise has an estimate of prediction markets' subjective probability of this; It's likely to move further from $50\%$ as the election gets closer. I'll assume that I don't have any insider knowledge about $P(w)$, so I'll adopt $P(w)$ as my subjective credence of my candidate winning.
 
-We need to choose a probability distribution over the possible spreads in the election, to determine the probability that the spread is 0 (meaning a tie). If I'm doing probability right, and I'm probably not, this seems to be described well by a binomial distribution with $n = \text{the number of people who will vote}$, and $p$ chosen such that the right proportion of the probability mass is on either side of 0, to satisfy the prediction markets. That is, if PredictWise thinks there's a 10% chance of the election being won by person A, and a 90% chance of it being won by person B, and there are only ten voters, we should choose approximately p = 0.27 that a given voter will choose person B. In this case, the probability of a tie is about 0.075.
+We need to choose a probability distribution over the possible spreads in the election, to determine the probability that the spread is 0 (meaning a tie). If I'm doing probability right, and I'm probably not, this seems to be described well by a binomial distribution with $n = \text{the number of people who will vote}$, and $p$ chosen such that the right proportion of the probability mass is on either side of 0, to satisfy the prediction markets. That is, if PredictWise thinks there's a 10% chance of the election being won by person A, and a 90% chance of it being won by person B, and there are only ten voters, we should choose approximately p = 0.27 that a given voter will choose person A. In this case, the probability of a tie is about 0.075.
 
 There's a problem with this: There are *lots* of voters. Binomial distributions get really hard to calculate exactly at large values of $n$ (even with a powerful computer), so we might benefit by trying an approximation. The standard approximation of a binomial distribution with large $n$ and middling $p$ is the normal distribution, with $\mu = np$ and $\sigma^2 = np(1-p)$.
 
