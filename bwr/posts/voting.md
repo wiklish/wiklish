@@ -9,11 +9,8 @@ math: true
 > I've ignored actual election procedures here (primarily the electoral college), because they make it more complicated, and I suspect that the results are more likely to be wrong for unrelated reasons. If you think I'm wrong about this, let me know how to correct the model.
 
 ## The probability of changing the outcome of the presidential election
-Let's call the chance of my vote changing the outcome of the election P(c). P(c) is the same as the probability that, without my vote, the election would have been tied.
 
-### How likely is it that an election will be tied?
-
-We can call my subjective credence that my candidate will win $P(w)$. PredictWise has an estimate of prediction markets' subjective probability of this; It's likely to move further from $50\%$ as the election gets closer. I'll assume that I don't have any insider knowledge about $P(w)$, so I'll adopt the prediction market's estimate as $P(w)$.
+PredictWise has an estimate of prediction markets' subjective probability of this; It's likely to move further from $50\%$ as the election gets closer. I'll assume that I don't have any insider knowledge that isn't reflected in the markets, so I'll adopt the prediction market's estimate as my subjective credence that my candidate will win.
 
 We need to choose a probability distribution over the possible spreads in the election, to determine the probability that the spread is 0 (meaning a tie). If I'm doing probability right, and I'm probably not, this seems to be described well by a binomial distribution with $n = \text{the number of people who will vote}$, and $p$ chosen such that the right proportion of the probability mass is on either side of 0, to satisfy the prediction markets. That is, if PredictWise thinks there's a 10% chance of the election being won by person A, and a 90% chance of it being won by person B, and there are only ten voters, we should choose approximately p = 0.27 that a given voter will choose person A. In this case, the probability of a tie is about 0.075.
 
@@ -25,7 +22,7 @@ If I take the current prediction from PredictWise, I see that Hillary Clinton ha
 > 
 > In particular, I think I'm confusing my subjective credence about the outcome of the election with an objective, frequentist-style probability distribution. Still, I couldn't think of anything better. I'd be interested to learn what the right way is.
 
-Assuming that's all correct, you can estimate the probability of a tie by the PDF of the distribution at 70,000,000, which is about $5.9\times 10^{-5}$, or $1/17000$.
+Assuming that's all correct, you can estimate the probability of a tie ($P(\text{tie})$) by the PDF of the distribution at 70,000,000, which is about $5.9\times 10^{-5}$, or $1/17000$.
 
 Not much of a chance is it?
 
@@ -55,7 +52,7 @@ $V = log(I) - log(I - Y)$
 ## Is voting worth it?
 
 So, how much is voting worth to us in expectation? Well, in the case when the election is not tied, it's worth $-V$.
-In the case when it *is* tied, it's worth $E - V.$ Thus, the expected value of voting is $P(c) * (E - V) + P(\sim c) * -V$.
+In the case when it *is* tied, it's worth $E - V.$ Thus, the expected value of voting is $P(\text{tie}) * (E - V) + P(\sim \text{tie}) * -V$.
 
 For me, this number comes out to be positive. It would be negative if I thought voting were significantly more costly, or if I would pay that weird wizard guy significantly less. So it's definitely possible that your numbers will come out differently.
 
