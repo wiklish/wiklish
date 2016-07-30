@@ -13,7 +13,7 @@ Let's call the chance of my vote changing the outcome of the election P(c). P(c)
 
 ### How likely is it that an election will be tied?
 
-We can call my subjective credence that my candidate will win $P(w)$. PredictWise has an estimate of prediction markets' subjective probability of this; It's likely to move further from $50\%$ as the election gets closer. I'll assume that I don't have any insider knowledge about $P(w)$, so I'll adopt $P(w)$ as my subjective credence of my candidate winning.
+We can call my subjective credence that my candidate will win $P(w)$. PredictWise has an estimate of prediction markets' subjective probability of this; It's likely to move further from $50\%$ as the election gets closer. I'll assume that I don't have any insider knowledge about $P(w)$, so I'll adopt the prediction market's estimate as $P(w)$.
 
 We need to choose a probability distribution over the possible spreads in the election, to determine the probability that the spread is 0 (meaning a tie). If I'm doing probability right, and I'm probably not, this seems to be described well by a binomial distribution with $n = \text{the number of people who will vote}$, and $p$ chosen such that the right proportion of the probability mass is on either side of 0, to satisfy the prediction markets. That is, if PredictWise thinks there's a 10% chance of the election being won by person A, and a 90% chance of it being won by person B, and there are only ten voters, we should choose approximately p = 0.27 that a given voter will choose person A. In this case, the probability of a tie is about 0.075.
 
@@ -53,9 +53,10 @@ You can do the same calculation as above to figure out how much voting costs you
 $V = log(I) - log(I - Y)$
 
 ## Is voting worth it?
+
 So, how much is voting worth to us in expectation? Well, in the case when the election is not tied, it's worth $-V$.
 In the case when it *is* tied, it's worth $E - V.$ Thus, the expected value of voting is $P(c) * (E - V) + P(\sim c) * -V$.
 
 For me, this number comes out to be positive. It would be negative if I thought voting were significantly more costly, or if I would pay that weird wizard guy significantly less. So it's definitely possible that your numbers will come out differently.
 
-If that's the case, though, consider that this calculation was conservative in another way: Namely, that you actually get to take part in multiple elections on election day for no extra cost. While those elections might not be as important as the presidential one, many of them are still quite important, *and* you have a much higher chance of influencing them, because they elect officials or enact policies that are voted on by a much smaller number of people (I'm referring to congressional elections, as well as state and local elections).
+If that's the case, though, consider that this calculation was conservative in an important way: Namely, that you actually get to take part in multiple elections on election day for no extra cost. While those elections might not be as important as the presidential one, many of them are still quite important, *and* you have a much higher chance of influencing them, because they elect officials or enact policies that are voted on by a much smaller number of people (I'm referring to congressional elections, as well as state and local elections).
